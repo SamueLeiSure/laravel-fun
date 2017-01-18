@@ -49,7 +49,7 @@
 
             <script>
                 function reply(a) {
-                    var nickname = a.parentNode.parentNode.firstChild.netSibling.getAttribute('data');
+                    var nickname = a.parentNode.parentNode.firstChild.nextSibling.getAttribute('data');
                     var textArea = document.getElementById('newFormContent');
                     textArea.innerHTML = '@'+nickname+' ';
                 }
@@ -60,7 +60,7 @@
                 <div class="one" style="border-top: solid 20px #efefef; padding: 5px 20px;">
                     <div class="nickname" data="{{ $comment->nickname }}">
                         @if ($comment->website)
-                        <a href="{{ $comment->nickname }}">
+                        <a href="{{ $comment->website }}">
                             <h3>{{ $comment->nickname }}</h3>
                         </a>
                         @else
